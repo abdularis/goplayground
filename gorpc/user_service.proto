@@ -1,0 +1,19 @@
+syntax="proto3";
+
+package service;
+option go_package="./service";
+
+message UserDetailRequest {
+    string userID = 1;
+}
+
+message UserDetail {
+    string userID = 1;
+    string name = 2;
+    string email = 3;
+    string imageUrl = 4;
+}
+
+service UserService {
+    rpc GetUserDetail(UserDetailRequest) returns (UserDetail) {}
+}
